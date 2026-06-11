@@ -9,9 +9,11 @@ package recursion;
    char curr=str.charAt(idx);
    int mapIndex=curr-'a';
    if(map[ mapIndex]==true){
+    //duplicate
     return deleteDuplicate(str,idx+1,sb,map);
    }
    else{
+    //actual
      map[ mapIndex]=true;
  return deleteDuplicate(str,idx+1,sb.append(curr),map);
    }
