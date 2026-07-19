@@ -1,0 +1,29 @@
+class Solution {
+    public int[] findMissingAndRepeatedValues(int[][] grid) {
+      int n=grid.length ;
+      int missing=-1;
+      int repeating=-1;
+      for(int num=1;num<=n*n;num++){
+         int count=0;
+        for(int i=0;i<=n-1;i++){
+          
+           for(int j=0;j<=n-1;j++){
+            if(grid[i][j]==num){
+                count++;
+            }
+        }
+        }
+       if(count==2){
+            repeating=num;
+        }
+        if(count==0){
+          missing=num;
+        }
+
+        }
+        
+      
+      return new int[]{repeating,missing};
+       
+    }
+}
