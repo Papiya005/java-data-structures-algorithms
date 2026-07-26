@@ -1,22 +1,26 @@
 package BACKTRACKING;
 public class permutation{
-    public static int fact(int n) {
-         
-         int fact=1;
-         for(int i=1;i<=n;i++){
-            fact=fact*i;
-         }
-        return fact;
+    public static void permutation(String str,String newString){
+        //recursion
+        if(str.length()==0){
+            System.out.println(newString);
+            return;
+        }
+        //choices
+        for(int i=0;i<str.length();i++){
+            //to be 
+           //not to be
+           char curr=str.charAt(i);
+           String newStr=str.substring(0, i)+str.substring(i+1);
+           permutation(newStr, newString+curr);
+
+
+        }
     }
-    public static int PrintPermutation(int n,int r){
-        int n_fact=fact(n);
-        int r_fact=fact(r);
-        int nmr=fact(n-r);
-       return n_fact/nmr;
-    }
+    
     public static void main(String[] args) {
         String str="abc";
-        int r=str.length();
-        System.out.println(r);
+        permutation(str, "");
+        
     }
 }
