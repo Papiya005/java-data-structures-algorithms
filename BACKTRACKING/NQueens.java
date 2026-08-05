@@ -1,5 +1,8 @@
 package BACKTRACKING;
+//count the total number of ways
+
 public class NQueens {
+     static int count=0;
     //is safe funtion
     public static boolean isSafe(char chessboard[][],int row,int column){
         //vertical up
@@ -24,9 +27,11 @@ public class NQueens {
 
     }
     public static void N_Queens( char chessboard[][],int row){
+       
         //base case
         if(row==chessboard.length){
-            printboard(chessboard);
+             count++;
+            // printboard(chessboard);
             return;
         }
         for(int j=0;j<chessboard.length;j++){
@@ -60,6 +65,7 @@ public class NQueens {
     }
    }
     N_Queens(chessboard,0);
+    System.out.print("Total number of count is :"+count);
     }
    
 
