@@ -7,45 +7,100 @@ This folder contains my **Java implementation and practice of Linked List data s
 * Node creation
 * Constructor in Node
 * Head and Tail
+* Understanding references
 * Adding a node at the beginning
-* Understanding node references
-* Connecting nodes
+* Adding a node at the end
+* Handling an empty linked list
+* Connecting nodes using the `next` reference
 
-## Current Implementation
+## Implementations
 
-The `basic.java` file currently demonstrates how to:
+### 1. Add First
 
-1. Create a `Node`.
-2. Create the first node.
-3. Maintain `Head` and `Tail`.
-4. Add a new node at the beginning of the linked list.
-5. Connect the new node with the existing list.
-
-### Example
-
-After:
-
-```java
-ll.firstAdd(10);
-ll.firstAdd(20);
-```
-
-The linked list becomes:
-
-```text
-20 → 10 → null
-```
-
-## Key Concept
-
-When adding a node at the beginning:
+A new node is added at the beginning of the linked list.
 
 ```java
 newNode.next = Head;
 Head = newNode;
 ```
 
-The first statement connects the new node to the existing list, and the second statement makes the new node the new `Head`.
+Example:
+
+```text
+Before:
+10 → 20 → 30 → null
+
+After addFirst(5):
+5 → 10 → 20 → 30 → null
+```
+
+### 2. Add Last
+
+A new node is added at the end of the linked list.
+
+```java
+Tail.next = newNode;
+Tail = newNode;
+```
+
+Example:
+
+```text
+Before:
+10 → 20 → 30 → null
+
+After addLast(40):
+10 → 20 → 30 → 40 → null
+```
+
+## Empty List
+
+When the linked list is empty, both `Head` and `Tail` point to the newly created node.
+
+```java
+Head = Tail = newNode;
+```
+
+Example:
+
+```text
+Head
+ ↓
+[10] → null
+ ↑
+Tail
+```
+
+## Key Concept: References
+
+The `next` variable stores a **reference to another Node**, not the node's data value.
+
+For example:
+
+```java
+Tail.next = newNode;
+```
+
+means that the current last node now points to the new node.
+
+## Current Files
+
+* `basic.java` — Adding nodes at the beginning
+* `addlast.java` — Adding nodes at the end
+
+## Example
+
+```java
+ll.addLast(100);
+ll.addLast(200);
+```
+
+Result:
+
+
+```text
+100 → 200 → null
+```
 
 ## Language
 
