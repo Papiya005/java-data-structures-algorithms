@@ -13,6 +13,21 @@ public class addlast {
             
         }
     }
+    public void firstAdd(int data){
+    //create a new node
+    Node newNode=new Node(data);
+    //if null
+    if(Head==null){
+        Head=Tail=newNode;
+        return;
+    }
+    //add new node to head
+    newNode.next=Head;
+    //head to newnode
+    Head=newNode;
+
+}
+
     public void addLast(int data){
        
 //create a new node
@@ -26,10 +41,23 @@ public class addlast {
      
 
     }
+    //print the linklist
+    public static void printList(){
+        Node temp=Head;
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+
+    }
+
     public static void main(String[] args) {
         addlast ll=new addlast();
+        ll.addLast(98);
+        ll.addLast(99);
         ll.addLast(100);
         ll.addLast(200);
+        printList();
 
     }
     

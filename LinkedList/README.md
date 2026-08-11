@@ -91,6 +91,8 @@ means that the current last node now points to the new node.
 ## Example
 
 ```java
+ll.addLast(98);
+ll.addLast(99);
 ll.addLast(100);
 ll.addLast(200);
 ```
@@ -99,7 +101,7 @@ Result:
 
 
 ```text
-100 → 200 → null
+98 ->99 ->100 → 200 → null
 ```
 
 ## Language
